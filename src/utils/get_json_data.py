@@ -14,8 +14,9 @@ def process_json_partial(file_path, start_line, end_line):
                 res_data_list.append(data)
             except json.JSONDecodeError as e:
                 print(f"Error decoding JSON at line {line_number}: {e}")
-
+    return res_data_list
 
 if __name__ == "__main__":
     json_data = '../../data/file-000000000001.json'
-    process_json_partial(json_data, 1, 2)
+    res = process_json_partial(json_data, 1, 3)
+    print(res)
